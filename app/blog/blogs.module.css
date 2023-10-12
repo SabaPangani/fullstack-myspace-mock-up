@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.wrapper .blogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:30px 100px;
+}

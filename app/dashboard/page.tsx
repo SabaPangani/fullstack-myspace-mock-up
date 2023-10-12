@@ -7,8 +7,9 @@ export default async function page() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/api/auth/signIn");
+    redirect("/api/auth/signin");
   }
+  
   const currentUserEmail = session?.user?.email!;
   const user = await prisma.user.findUnique({
     where: { email: currentUserEmail },

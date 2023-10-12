@@ -22,14 +22,13 @@ export function ProfileForm({ user }: any) {
         'Content-Type': 'application/json',
       },
     });
-    
     await res.json();
   };
 
   return (
     <div>
       <h2>Edit Your Profile</h2>
-      <form onSubmit={updateUser}>
+      <form onSubmit={updateUser} style={{display: 'flex', flexDirection: 'column',rowGap: '10px', margin:'0 auto', width:'500px'}}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" defaultValue={user?.name ?? ''} />
         <label htmlFor="bio">Bio</label>
@@ -42,7 +41,7 @@ export function ProfileForm({ user }: any) {
         <label htmlFor="age">Age</label>
         <input type="text" name="age" defaultValue={user?.age ?? 0} />
         <label htmlFor="image">Profile Image URL</label>
-        <input type="text" name="image" defaultValue={user?.image ?? ''} />
+        <input type="text" name="image" defaultValue={'https://play-lh.googleusercontent.com/V7N6oSYnBMAl5mE_4-h7Ve9ou3wLmQ8-X7wVthYhhF7OdjtnWhgcXoUREd3Lepn7DQw'} />
 
         <button type="submit">Save</button>
       </form>
